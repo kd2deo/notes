@@ -1,0 +1,114 @@
+Linux Commands & Vim Tutorial
+
+Shortcut in Command Text:
+Ctrl + A
+Go to starting of command.
+Ctrl + E
+Go to end of command.
+Alt + B
+Go one word back in command text.
+Alt + F
+Go one word forward in command text.
+Alt + <- (backspace)
+Delete one word backward from where cursor pointing.
+Alt + D
+Delete one word forward from where cursor pointing.
+
+Commands
+cd ../..    ->     Back to two directory.
+cd -        ->     Back you to last used directory.
+mkdir -p test/test1 -> Create Sub directory
+rm -rf directory   -> delete directory with child.
+mv test1 test2    -> Rename test1 to test2.
+
+File
+touch file.txt -> create file.
+rm file*.txt   -> remove all txt file which start with file.
+echo “hello world” > file.txt  -> move content to file.txt/override( If file not there it will create)
+echo “hello world2” >> file.txt -> append text to file.
+cat file.txt   ->    to see all content in file
+less file.txt -> start with beginning with pagination ( space to next, q to exit )
+head file.txt -> first 10 line 
+tail file.txt  -> last 10 line
+cp file.txt file_copy.txt  -> copy file
+cp *.txt test/  ->  copy all text file to test directory
+cp -r dir dir-copy -> copy directory.
+
+find . -name file.txt -> Find all file with name file.txt in current directory.
+find . -type f -name file.txt -> Search for file name with file
+find . -type f -name file.txt -> Search for file name with file( Ignore case sensitive eg FILE.txt )
+find . -type f -name “*.txt” -> Search for all text file.
+find . -type f -name file.txt -delete -> Find files and delete as well.
+find . -type f -empty -> Find files with empty
+find . -type d -name folder -> search for directory name with folder.
+
+grep -r “Krishan” Documents -> It will search all files inside Documents directory and return result with file name in which word found.
+grep -ri “Krishan” Documents -> It will search all files inside Documents directory and return result with file name in which word found with ignore case.
+grep -rn “Krishan” Documents -> It will search all files inside Documents directory and return result with file name in which word found with line number.
+grep -rni -A 3 -B 3 “Krishan” .    -> Give 3 line above and 3 line below as well with searched text.
+
+Run history command and !<line_number>(from history) will execute that command.
+history | grep “find”  -> show all history with find command.
+!!   -> show last command.
+If you do some typo and ended up with error, for example:-
+	rep -ri "end" . 
+	^rep^grep -> this will replace rep with grep and show the result.
+Ctrl + R -> Search for command.
+
+VIM
+vim file.txt -> Open file in Vim
+: set number -> show line number in vim text.
+:syntax on -> Syntax highlight based on file type
+:q!  -> Quit from Vim
+h   -> Right move.
+j   ->  Down move.
+k  ->  Up move.
+l   -> Left move.
+w -> Move word by word forward.
+b -> Move word by word backward.
+0 -> Go Beginning of line.
+$ -> Go End of line.
+^  -> Go Beginning of first character ( if space exist before first char)
+g   ->  Go to beginning of file.
+G -> Go to end of file.
+[  -> Move Up paragraph by paragraph.
+]  -> Move Down paragraph by paragraph.
+<line_number>gg -> Go to specific line number.
+vim +<line_number> file.txt  -> Open file and jump to provided line number.
+i  -> Insert Mode ( From cursor)
+a -> Go to Insert mode and append text after the cursor.
+o -> Go to Insert mode and insertion start from next line where cursor is pointing.
+O -> Go to Insert mode and insertion start from previous line where cursor is pointing.
+Shift + a -> Go to Insert mode and insertion start from end of line where cursor is pointing.
+:   -> Go to command mode.
+u -> Undo from Command Mode.
+Ctrl + R -> Redo from Command mode.
+:w -> Save/Write changes.
+:wq -> Save and Quite.
+dw -> Delete one word.
+db -> Delete beginning of word.
+dd -> Delete current line. This will treat as cut.
+p -> Paste.
+2dd -> Delete two line.
+dG  -> Delete to end of line from cursor where it’s pointing..
+/<search_text>  -> It will search text in vim from command mode. Press n for next search and N for previous search.
+:%s/search_text/replace_text/gc  -> Search and replace, g for global and c for asking confirmation.
+
+
+
+
+
+
+	
+
+
+
+
+
+ 
+
+
+
+
+
+
