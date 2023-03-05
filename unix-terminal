@@ -2,12 +2,12 @@
 		Shortcut in Command Text
 ==========================================================================
 
-Ctrl + A 	-> 	Go to starting of command.
-Ctrl + E 	-> 	Go to end of command.
-Alt + B 	-> 	Go one word back in command text.
-Alt + F 	-> 	Go one word forward in command text.
-Alt + <- (backspace) -> Delete one word backward from where cursor pointing.
-Alt + D 	-> 	Delete one word forward from where cursor pointing.
+Ctrl + A 		-> 	Go to starting of command.
+Ctrl + E 		-> 	Go to end of command.
+Alt + B 		-> 	Go one word back in command text.
+Alt + F 		-> 	Go one word forward in command text.
+Alt + <- (backspace) 	-> 	Delete one word backward from where cursor pointing.
+Alt + D 		-> 	Delete one word forward from where cursor pointing.
 
 ==========================================================================
 			Commands
