@@ -23,17 +23,17 @@ mv test1 test2    	-> 		Rename test1 to test2.
 			File
 ==========================================================================
 
-touch file.txt 			-> 		create file.
-rm file*.txt   			-> 		remove all txt file which start with file.
-echo “hello world” > file.txt  	-> 		move content to file.txt/override( If file not there it will create)
-echo “hello world2” >> file.txt -> 		append text to file.
-cat file.txt   			->    		to see all content in file
-less file.txt 			-> 		start with beginning with pagination ( space to next, q to exit )
-head file.txt 			-> 		first 10 line 
-tail file.txt  			-> 		last 10 line
-cp file.txt file_copy.txt  	-> 		copy file
-cp *.txt test/  		->  		copy all text file to test directory
-cp -r dir dir-copy 		-> 		copy directory.
+touch file.txt 				-> 		create file.
+rm file*.txt   				-> 		remove all txt file which start with file.
+echo “hello world” > file.txt  		-> 		move content to file.txt/override( If file not there it will create)
+echo “hello world2” >> file.txt 	-> 		append text to file.
+cat file.txt   				->    		to see all content in file
+less file.txt 				-> 		start with beginning with pagination ( space to next, q to exit )
+head file.txt 				-> 		first 10 line 
+tail file.txt  				-> 		last 10 line
+cp file.txt file_copy.txt  		-> 		copy file
+cp *.txt test/  			->  		copy all text file to test directory
+cp -r dir dir-copy 			-> 		copy directory.
 
 find . -name file.txt 			-> 		Find all file with name file.txt in current directory.
 find . -type f -name file.txt 		-> 		Search for file name with file
