@@ -169,4 +169,3 @@ public class UncheckedToChecked {
    - Checked to Unchecked: Wrap in `RuntimeException`.
    - Unchecked to Checked: Wrap in a custom `Exception`.
 
-By understanding these concepts, you’ll be well-prepared to handle questions on exception handling in Java during interviews.
