@@ -165,3 +165,50 @@ payment.pay(500.0);  // Output: Paid 500.0 using UPI.
 - 🟢 **Interfaces** = 100% abstraction (until Java 8 default methods)
 - 🟡 **Use** when multiple implementations are possible
 - 🟣 **Focus** on *what* an object should do, not *how*
+
+# 🔌 When to Use Interface vs Abstract Class in Java
+
+## 🧩 Use an Interface When:
+
+| Scenario | Explanation |
+|----------|-------------|
+| ✅ You want to define a **contract** or capability | Example: `Runnable`, `Comparable` — classes can implement multiple interfaces like "can run" or "can compare". |
+| ✅ **Multiple inheritance** is needed | Java allows a class to implement multiple interfaces but extend only one class. |
+| ✅ You only need **method declarations** | Interfaces are good when no base implementation is required. |
+| ✅ You want to ensure **loose coupling** | Promotes more flexible and decoupled design (e.g., services implementing interfaces). |
+| ✅ You want to use **Java 8+ features** | Interfaces can now have `default` and `static` methods, making them more powerful. |
+
+📌 **Example**: `List`, `Map`, `Set` are all interfaces in Java’s Collections Framework.
+
+---
+
+## 🧩 Use an Abstract Class When:
+
+| Scenario | Explanation |
+|----------|-------------|
+| ✅ You want to provide **common behavior or code reuse** | Abstract classes can have both implemented (concrete) and unimplemented (abstract) methods. |
+| ✅ You need to define **common state/fields** | Abstract classes can have instance variables, constructors, and state. |
+| ✅ You want to enforce a **template pattern** | Use abstract methods to enforce steps that subclasses must override. |
+| ✅ You want to ensure **controlled inheritance** | Since you can extend only one class, this is good for strong type hierarchies. |
+
+📌 **Example**: `HttpServlet` in Java EE is an abstract class — provides default behavior, and developers override only needed parts.
+
+---
+
+## 🆚 Interface vs Abstract Class Cheat Sheet
+
+| Feature                  | Interface                        | Abstract Class                    |
+|--------------------------|----------------------------------|-----------------------------------|
+| Inheritance              | Multiple (via interfaces)        | Single (via extends)              |
+| Methods                  | Abstract + default (Java 8+)     | Abstract + concrete               |
+| Fields                   | `public static final` only       | Instance variables allowed        |
+| Constructors             | ❌ Not allowed                   | ✅ Allowed                         |
+| Access Modifiers         | Public methods only (until Java 9) | Any (private/protected/public) |
+| Use case                | Capability-based, contract        | Base class, partial implementation|
+
+---
+
+## 🧠 Quick Rule of Thumb
+
+> 🔸 Use **interface** when behavior is **common across unrelated classes**.  
+> 🔹 Use **abstract class** when behavior is **shared within a family of related classes**.
