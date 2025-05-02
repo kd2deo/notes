@@ -212,3 +212,87 @@ payment.pay(500.0);  // Output: Paid 500.0 using UPI.
 
 > 🔸 Use **interface** when behavior is **common across unrelated classes**.  
 > 🔹 Use **abstract class** when behavior is **shared within a family of related classes**.
+
+
+
+
+# 🧬 Inheritance in Object-Oriented Programming (OOP)
+
+## 🔍 What is Inheritance?
+Inheritance is another core principle of OOP. It allows a class (**child/subclass**) to **inherit fields and methods** from another class (**parent/superclass**), promoting **code reusability and hierarchy**.
+
+It supports the concept of "**is-a**" relationship.
+
+---
+
+## ✅ Advantages of Inheritance
+- 🔁 **Code Reusability**: Reuse existing logic from parent classes without rewriting.
+- 🧩 **Modular Design**: Helps organize classes in a hierarchical manner.
+- ⬆️ **Extensibility**: New functionality can be added to existing code.
+- 🔄 **Maintainability**: Common logic centralized in the base class reduces duplication.
+- 🧠 **Polymorphism Support**: Enables dynamic method dispatch at runtime.
+
+---
+
+## 🚀 Use Case: Employee Hierarchy in Java
+
+### Java Example:
+```java
+// Parent Class
+public class Employee {
+    protected String name;
+    protected int id;
+
+    public Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", ID: " + id);
+    }
+}
+
+// Child Class
+public class Manager extends Employee {
+    private int teamSize;
+
+    public Manager(String name, int id, int teamSize) {
+        super(name, id);
+        this.teamSize = teamSize;
+    }
+
+    public void displayManagerInfo() {
+        displayInfo(); // Inherited method
+        System.out.println("Team Size: " + teamSize);
+    }
+}
+```
+
+### Usage Example:
+```java
+Manager mgr = new Manager("Bob", 101, 5);
+mgr.displayManagerInfo();
+```
+
+---
+
+## 📝 Summary
+
+| Feature             | Description                                      |
+|---------------------|--------------------------------------------------|
+| 🧬 "is-a" Relation   | Subclass is a specialized form of superclass     |
+| 📦 Code Reuse       | Inherits fields and methods                      |
+| 🔄 Override Methods | Subclass can override superclass methods         |
+| ⬆️ Extendable Design | Add extra features without changing parent class |
+| 🔁 Super Keyword     | Call superclass constructor or methods           |
+
+---
+
+## 🎨 Quick Revision (Color-coded)
+
+- 🔵 **Inheritance** = Reuse + Extend existing classes
+- 🔴 **Super** = Access parent class constructor/methods
+- 🟢 **Override** = Customize inherited behavior
+- 🟡 **Protected** = Visible in subclass, hidden from outside
+- 🟣 **"is-a"** = Subclass relationship with superclass
