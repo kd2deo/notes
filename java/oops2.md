@@ -77,3 +77,91 @@ System.out.println(user.checkPassword("wrongpass"));  // false
 - 🔴 **Private** variables + 🟢 **Public** getters/setters = control
 - 🟡 Sensitive data = No getter OR masked getter
 - 🟣 Validation = In setters to ensure data integrity
+
+
+
+# 🎭 Abstraction in Object-Oriented Programming (OOP)
+
+## 🔍 What is Abstraction?
+Abstraction is one of the core principles of OOP. It involves **hiding the complex implementation details** and showing only the **essential features** of an object or system to the user.
+
+In Java, abstraction is achieved using:
+- **Abstract classes**
+- **Interfaces**
+
+---
+
+## ✅ Advantages of Abstraction
+- 🚫 **Hides Complexity**: Focuses on *what* an object does rather than *how* it does it.
+- 🔄 **Improves Modularity**: Encourages separation of responsibilities.
+- 🛡️ **Enhances Security**: Users can’t access unnecessary internal details.
+- 🧪 **Easier Testing**: Mock interfaces or abstract types for testing.
+- 🔧 **Flexible Design**: Implementation can change without impacting users.
+
+---
+
+## 🚀 Use Case: Payment System Abstraction
+
+### Abstract Class Example:
+```java
+public abstract class Payment {
+    public abstract void pay(double amount);
+
+    public void receipt() {
+        System.out.println("Payment successful.");
+    }
+}
+```
+
+### Subclass Implementation:
+```java
+public class CreditCardPayment extends Payment {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using Credit Card.");
+    }
+}
+```
+
+### Interface Example:
+```java
+public interface PaymentMethod {
+    void pay(double amount);
+}
+```
+
+### Implementation:
+```java
+public class UpiPayment implements PaymentMethod {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using UPI.");
+    }
+}
+```
+
+### Usage Example:
+```java
+PaymentMethod payment = new UpiPayment();
+payment.pay(500.0);  // Output: Paid 500.0 using UPI.
+```
+
+---
+
+## 📝 Summary
+
+| Feature               | Description                                        |
+|-----------------------|----------------------------------------------------|
+| 🎭 Abstraction         | Focus on essential behavior, hide implementation  |
+| 🧩 Abstract Class      | Can have abstract + concrete methods              |
+| 🔌 Interface           | All methods are abstract (Java 7 and below)       |
+| 🔄 Flexibility         | Easy to swap implementations                      |
+| 🚫 Internal Complexity | Users don't see internal details                  |
+
+---
+
+## 🎨 Quick Revision (Color-coded)
+
+- 🔵 **Abstraction** = Essential Features + Hide Details
+- 🔴 **Abstract Classes** = Partial implementation + abstraction
+- 🟢 **Interfaces** = 100% abstraction (until Java 8 default methods)
+- 🟡 **Use** when multiple implementations are possible
+- 🟣 **Focus** on *what* an object should do, not *how*
