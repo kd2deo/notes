@@ -296,3 +296,145 @@ mgr.displayManagerInfo();
 - 🟢 **Override** = Customize inherited behavior
 - 🟡 **Protected** = Visible in subclass, hidden from outside
 - 🟣 **"is-a"** = Subclass relationship with superclass
+
+
+
+# 🔁 Polymorphism in Object-Oriented Programming (OOP)
+
+## 🔍 What is Polymorphism?
+Polymorphism is one of the four core principles of OOP. It allows **objects of different classes** to be treated as **objects of a common superclass**, typically through **method overriding** or **interface implementation**.
+
+The term literally means "**many forms**", enabling a single interface to represent different underlying forms (data types).
+
+---
+
+## ✅ Advantages of Polymorphism
+- 🔄 **Code Reusability**: The same method name can be reused across different classes.
+- 🧠 **Simplified Code**: Makes code more readable and maintainable.
+- 📦 **Extensibility**: New classes can be added with minimal changes to existing code.
+- 🧪 **Better Testing**: Common testing logic for shared interfaces or base classes.
+- 🔧 **Dynamic Behavior**: Enables late binding, decided at runtime.
+
+---
+
+## 🚀 Use Case: Shape Drawing in Java
+
+### Java Example:
+```java
+class Shape {
+    public void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+
+class Circle extends Shape {
+    public void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+class Rectangle extends Shape {
+    public void draw() {
+        System.out.println("Drawing a rectangle");
+    }
+}
+```
+
+### Usage Example:
+```java
+public class Main {
+    public static void main(String[] args) {
+        Shape s1 = new Circle();     // Polymorphic reference
+        Shape s2 = new Rectangle();  // Polymorphic reference
+
+        s1.draw();  // Output: Drawing a circle
+        s2.draw();  // Output: Drawing a rectangle
+    }
+}
+```
+
+---
+
+## 📝 Summary
+
+| Feature              | Description                                                       |
+|----------------------|-------------------------------------------------------------------|
+| 🎭 Runtime Polymorphism | Achieved via method overriding and dynamic method dispatch.       |
+| 🔁 Method Overriding    | Subclass provides specific implementation of a superclass method. |
+| 🎯 Interface Usage      | Enables polymorphism without needing inheritance.                |
+| 🧱 Unified Architecture | Treat different objects through a common interface or superclass. |
+
+---
+
+## 🎨 Quick Revision (Color-coded)
+
+- 🔵 **Polymorphism** = One interface, many implementations
+- 🟢 **Overriding** = Runtime polymorphism (dynamic dispatch)
+- 🔴 **Overloading** = Compile-time polymorphism (same method name, different signature)
+- 🟣 Common interface = Interchangeable object behavior
+- 🟡 Base class reference = Calls subclass method at runtime
+
+---
+
+## 🔢 Types of Polymorphism in Java
+
+Java supports two main types of polymorphism:
+
+### 1. 🛠️ Compile-Time Polymorphism (Static Polymorphism)
+Also known as **method overloading**.
+
+- ✅ Achieved by having multiple methods with the **same name** but **different parameter lists** (type, number, or order).
+- 🔍 Resolved **during compilation**.
+- 🧠 Improves readability and flexibility of code.
+
+**Example**:
+```java
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+```
+
+---
+
+### 2. ⏱️ Runtime Polymorphism (Dynamic Polymorphism)
+Also known as **method overriding**.
+
+- ✅ Achieved when a **subclass provides a specific implementation** of a method that is already defined in its superclass.
+- 🔍 Resolved **at runtime** via **dynamic method dispatch**.
+- 🤝 Enables loose coupling and flexibility.
+
+**Example**:
+```java
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Animal a = new Dog(); // Polymorphic reference
+        a.sound();  // Output: Dog barks
+    }
+}
+```
+
+---
+
+### ❌ Not Considered True Polymorphism in Java
+
+- **Operator Overloading**: Not supported (unlike C++).
+- **Constructor Overloading**: Part of compile-time polymorphism but often seen separately.
+
