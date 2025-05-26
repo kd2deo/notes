@@ -294,9 +294,3 @@ Verify that the full Spring context loads and beans are wired correctly.
 
 ---
 
-> Want more? Next parts can cover:
-> - `@FeignClient`, `@Retryable`, `@LoadBalanced` (Microservices)
-> - `@PreAuthorize`, `@Secured` (Spring Security)
-> - Custom annotations and Bean Lifecycle
-
-Let me know if you'd like a downloadable PDF or additional advanced annotations!
